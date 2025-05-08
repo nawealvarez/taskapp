@@ -19,13 +19,13 @@ export const columns: ColumnDef<Item>[] = [
       );
     },
   },
-  { accessorKey: 'spec', header: 'Spec' },
+  { accessorKey: 'spec', header: 'Spec', enableColumnFilter: true },
   { accessorKey: 'rev', header: 'Rev' },
-  { accessorKey: 'title', header: 'Title' },
+  { accessorKey: 'title', header: 'Title', enableColumnFilter: true, },
   { accessorKey: 'type', header: 'Type' },
   { accessorKey: 'priority', header: 'Priority' },
   { accessorKey: 'package', header: 'Package' },
-  { accessorKey: 'builtInCount', header: 'Ball in court' },
+  { accessorKey: 'builtInCount', header: 'Ball in court', enableColumnFilter: true, },
   { accessorKey: 'dueDate', header: 'Due date' },
   {
     accessorKey: 'response',

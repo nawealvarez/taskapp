@@ -7,6 +7,7 @@ import type { ColumnFiltersState, SortingState } from '@tanstack/react-table';
 import { Download, Plus, SlidersHorizontal } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { columns } from './columns';
+import styles from './ItemTable.module.scss';
 
 function ItemTable() {
   const [data, setData] = useState<Item[]>([]);
@@ -14,14 +15,13 @@ function ItemTable() {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
   useEffect(() => {
-    list().then(res => {
-      console.log(res);
+    list().then((res) => {
       setData(res.data);
     });
   }, []);
   return (
-    <div className="w-full h-full">
-      <div className="flex justify-between items-center mb-4 gap-4 flex-wrap">
+    <div className={styles.itemTable__wrapper}>
+      <div className={styles.itemTable__actions}>
         <div className="flex items-center gap-2">
           <Button variant="default" onClick={() => console.log('Open modal')}>
             <Plus className="mr-2 h-4 w-4" /> Create item
