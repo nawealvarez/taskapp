@@ -1,0 +1,19 @@
+.tabs {
+  @apply w-full;
+
+  &__wrapper {
+    @apply border-b mb-4 justify-items-start;
+  }
+
+  &__list {
+    @apply flex gap-6 bg-transparent p-0;
+  }
+
+  &__trigger {
+    @apply text-gray-500 pb-2 font-medium text-sm rounded-none bg-transparent;
+
+    &[data-state='active'] {
+      @apply border-b-2 border-b-blue-600 text-black;
+    }
+  }
+}

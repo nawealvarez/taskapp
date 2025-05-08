@@ -1,18 +1,11 @@
-export enum Status {
-  OPEN = 'Open',
-  IN_PROGRESS = 'In Progress',
-  CLOSED = 'Closed',
-  CANCELLED = 'Cancelled',
-}
+export type Status = 'Open' | 'In Progress' | 'Closed' | 'Cancelled';
+export type Response = 'Approve' | 'Reject' | 'Pending';
+export type Priority = 'Normal' | 'High' | 'Low';
 
-export enum Response {
-  APPROVE = 'Approve',
-  REJECT = 'Reject',
-  PENDING = 'Pending',
-}
-
-export enum Priority {
-  NORMAL = 'Normal',
-  HIGH = 'High',
-  LOW = 'Low',
+export interface ResponseType<T> {
+  data: T[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
 }
