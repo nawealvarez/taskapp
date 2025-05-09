@@ -2,7 +2,7 @@ import axios, { type AxiosResponse } from 'axios';
 
 const apiClient = axios.create({
   baseURL:
-    import.meta.env.VITE_API_URL || 'https://task-api.free.beeceptor.com',
+    import.meta.env.VITE_API_URL || 'https://myawesomeproject.free.beeceptor.com',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',

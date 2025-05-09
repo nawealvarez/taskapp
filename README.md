@@ -8,10 +8,6 @@ A modern task management application built with React, TypeScript, and Vite, fea
 - Fast development with Vite
 - Beautiful UI components using shadcn/ui
 - SCSS modules for styling
-- Component-based architecture
-- Responsive design
-- Loading states and animations
-- Custom button component with multiple variants
 
 ## 🛠️ Tech Stack
 
@@ -24,6 +20,8 @@ A modern task management application built with React, TypeScript, and Vite, fea
 
 ## 📦 Installation
 
+> **Note:** This project uses [pnpm](https://pnpm.io/installation) as the package manager. If you don't have it installed, follow the instructions [here](https://pnpm.io/installation).
+
 1. Clone the repository:
 
 ```bash
@@ -34,57 +32,13 @@ cd taskapp
 2. Install dependencies:
 
 ```bash
-npm install
+pnpm i
 ```
 
 3. Start the development server:
 
 ```bash
-npm run dev
-```
-
-## 🎨 Component Library
-
-### Button Component
-
-The project includes a custom Button component that extends shadcn/ui's button with additional features:
-
-```tsx
-import { Button } from '@/components/button/Button';
-
-// Usage examples
-<Button>Default Button</Button>
-<Button variant="outline">Outline Button</Button>
-<Button variant="secondary">Secondary Button</Button>
-<Button isLoading>Loading Button</Button>
-```
-
-#### Button Variants
-
-- `default` - Primary button with blue background
-- `outline` - Outlined button with blue border
-- `secondary` - Light blue background
-- `ghost` - Transparent background with blue text
-- `link` - Link-style button
-- `destructive` - Red background for destructive actions
-
-#### Props
-
-- `isLoading?: boolean` - Shows loading spinner
-- `disabled?: boolean` - Disables the button
-- `variant?: 'default' | 'outline' | 'secondary' | 'ghost' | 'link' | 'destructive'`
-- All standard button props are supported
-
-## 🧪 Testing
-
-The project uses React Testing Library and Jest for testing:
-
-```bash
-# Run tests
-npm test
-
-# Run tests in watch mode
-npm test:watch
+pnpm dev
 ```
 
 ## 📝 Code Style
@@ -100,10 +54,13 @@ The project uses ESLint for code quality and consistency. Configuration includes
 
 ```
 src/
-├── assets/          # Static assets like images, fonts, etc.
-├── components/      # Reusable UI components
+├── assets/         # Static assets like images, fonts, etc.
+├── components/     # Reusable UI components
 │   ├── button/     # Custom button component
-│   ├── table/      # Table components
+│   ├── formItem/   # Custom formItem component
+│   ├── modal/      # Custom modal components
+│   ├── select/     # Custom select components
+│   ├── table/      # Custom table components
 │   └── ui/         # shadcn/ui components
 ├── context/        # React Context providers
 ├── data/           # Mock data and constants
@@ -128,6 +85,9 @@ src/
 Reusable UI components that can be used across different pages:
 
 - `button/`: Custom button component with variants
+- `formItem/`: Custom formItem component for Forms to add Label and inputs
+- `modal/`: Custom modal component to display information
+- `select/`: Custom select component for forms
 - `table/`: Table-related components
 - `ui/`: shadcn/ui components and their configurations
 

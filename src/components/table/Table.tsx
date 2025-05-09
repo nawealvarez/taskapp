@@ -49,7 +49,7 @@ function Table<TData, TValue>({
   const tableContainerRef = useRef<HTMLDivElement>(null);
 
   const rowVirtualizer = useVirtualizer({
-    count: rows.length,
+    count: rows?.length,
     getScrollElement: () => tableContainerRef.current,
     estimateSize: () => 50,
     overscan: 28,
@@ -82,7 +82,7 @@ function Table<TData, TValue>({
               );
             })
           ) : (
-            <TableEmptyRow colLength={columns.length} />
+            <TableEmptyRow colLength={columns?.length} />
           )}
         </TableBody>
       </ShadcnTable>

@@ -37,9 +37,9 @@ function CreateItemModal({ open, onClose }: CreateItemModalProps) {
         setItems((prev) => [...prev, res]);
       }
 
-      //if (!values.createAnother) {
-      //  onClose();
-      //}
+      if (!values.createAnother) {
+        onClose();
+      }
 
       form.reset();
       toast.success(`Item with ID ${res.id} created successfully!`);

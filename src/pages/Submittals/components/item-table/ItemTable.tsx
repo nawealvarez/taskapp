@@ -22,7 +22,7 @@ function ItemTable() {
     setGlobalFilter(e.target.value);
   }
 
-  if (loading) return <div>Loading...</div>;
+  if (!items || loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   return (
     <>
