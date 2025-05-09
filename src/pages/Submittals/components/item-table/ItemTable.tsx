@@ -2,7 +2,7 @@ import Table from '@/components/table/Table';
 import Button from '@/components/button/Button';
 import { Input } from '@/components/ui/input';
 import type { SortingState } from '@tanstack/react-table';
-import { Download, Plus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { useState } from 'react';
 import { columns } from './columns';
 import styles from './ItemTable.module.scss';
@@ -34,9 +34,6 @@ function ItemTable() {
             </Button>
           </div>
           <div className="flex gap-2 items-center">
-            <Button variant="outline" disabled>
-              <Download className="mr-2 h-4 w-4" /> Export
-            </Button>
             <Input
               placeholder="Search by title, spec or ball in court"
               value={globalFilter}
