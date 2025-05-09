@@ -1,4 +1,4 @@
-import { apiRequest } from '@/lib/axios';
+//import { apiRequest } from '@/lib/axios';
 import type { Item } from '@/types/item';
 import type { ResponseType } from '@/types/common';
 
@@ -7,8 +7,24 @@ export const list = async (): Promise<ResponseType<Item>> => {
 };
 
 export const create = async (data: Item): Promise<Item> => {
-  return await apiRequest<Item>('/items', 'POST', data);
+  console.log(data);
+  return await Promise.resolve(resCreated);
+  //return await apiRequest<Item>('/items', 'POST', data);
 };
+
+const resCreated: Item = {
+  "status": "Closed",
+  "id": 9999,
+  "spec": "test 9999",
+  "rev": 0,
+  "title": "testing import",
+  "type": "type 9999",
+  "priority": "Low",
+  "package": "-",
+  "ballInCourt": "John Doe",
+  "dueDate": "-",
+  "response": "Approve"
+}
 
 const res: ResponseType<Item> = {
   data: [

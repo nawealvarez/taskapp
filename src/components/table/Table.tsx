@@ -18,24 +18,27 @@ import { useRef } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import type { DataTableProps } from './Table.types';
 import styles from './Table.module.scss';
+import { cn } from '@/utils';
 
 function Table<TData, TValue>({
   columns,
   data,
-  columnFilters,
   sorting,
+  globalFilter,
   onSortingChange,
-  onColumnFiltersChange,
+  onGlobalFilterChange,
+  globalFilterFn,
 }: DataTableProps<TData, TValue>) {
   const table = useReactTable({
     data,
     columns,
     state: {
       sorting,
-      columnFilters,
+      globalFilter,
     },
     onSortingChange,
-    onColumnFiltersChange,
+    onGlobalFilterChange,
+    globalFilterFn,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel()
@@ -55,7 +58,7 @@ function Table<TData, TValue>({
   const virtualRows = rowVirtualizer.getVirtualItems();
 
   return (
-    <div className={styles.table__wrapper} ref={tableContainerRef}>
+    <div className={cn(styles.table__wrapper, 'scrollbar-style')} ref={tableContainerRef}>
       <ShadcnTable>
         <TableHeader headers={headers} />
         <TableBody className={styles.table__body}>

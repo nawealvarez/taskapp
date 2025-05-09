@@ -1,0 +1,61 @@
+.button {
+  &--default {
+    background-color: theme('colors.blue.500');
+    color: white;
+
+    &:hover {
+      background-color: theme('colors.blue.600');
+    }
+  }
+
+  &--outline {
+    border-color: theme('colors.blue.500');
+    color: theme('colors.blue.500');
+
+    &:hover {
+      background-color: theme('colors.blue.500');
+      color: white;
+    }
+  }
+
+  &--secondary {
+    background-color: theme('colors.blue.100');
+    color: theme('colors.blue.700');
+
+    &:hover {
+      background-color: theme('colors.blue.200');
+    }
+  }
+
+  &--ghost {
+    color: theme('colors.blue.500');
+
+    &:hover {
+      background-color: theme('colors.blue.100');
+      color: theme('colors.blue.700');
+    }
+  }
+
+  &--link {
+    color: theme('colors.blue.500');
+    background-color: transparent;
+
+    &:hover {
+      color: theme('colors.blue.700');
+    }
+  }
+
+  &--destructive {
+    background-color: theme('colors.red.500');
+    color: white;
+
+    &:hover {
+      background-color: theme('colors.red.600');
+    }
+  }
+
+  &--loading {
+    position: relative;
+    pointer-events: none;
+  }
+}

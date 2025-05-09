@@ -1,0 +1,9 @@
+$gutter: 8rem;
+
+.modal {
+  &__wrapper {
+    @apply max-w-2xl max-h-[700px] overflow-y-auto;
+    height: calc(100vh - $gutter);
+    width: calc(100vw - $gutter);
+  }
+}
